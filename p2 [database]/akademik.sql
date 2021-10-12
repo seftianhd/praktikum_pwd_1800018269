@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2021 at 12:50 PM
+-- Generation Time: Oct 12, 2021 at 02:08 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -32,18 +32,19 @@ CREATE TABLE `mahasiswa` (
   `nama` varchar(50) DEFAULT NULL,
   `jkel` varchar(1) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `tgllhr` date DEFAULT NULL
+  `tgllhr` date DEFAULT NULL,
+  `nilai` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`nim`, `nama`, `jkel`, `alamat`, `tgllhr`) VALUES
-('MHS01', 'Siti Aminah', 'P', 'SOLO', '1995-10-01'),
-('MHS02', 'RITA', 'P', 'SOLO', '1999-01-01'),
-('MHS03', 'AMIRUDIN', 'L', 'SEMARANG', '1998-08-11'),
-('MHS04', 'Siti Maryam', 'P', 'JAKARTA', '1995-04-15');
+INSERT INTO `mahasiswa` (`nim`, `nama`, `jkel`, `alamat`, `tgllhr`, `nilai`) VALUES
+('MHS01', 'Siti Aminah', 'P', 'SOLO', '1995-10-01', 100),
+('MHS02', 'RITA', 'P', 'SOLO', '1999-01-01', 100),
+('MHS03', 'AMIRUDIN', 'L', 'SEMARANG', '1998-08-11', 90),
+('MHS04', 'Siti Maryam', 'P', 'JAKARTA', '1995-04-15', 100);
 
 --
 -- Indexes for dumped tables
