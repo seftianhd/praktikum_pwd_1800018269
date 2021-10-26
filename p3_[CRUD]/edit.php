@@ -1,18 +1,20 @@
 <?php
 // include database connection file
 include_once("koneksi.php");
+
 // Check if form is submitted for user update, then redirect to homepage after update
 if(isset($_POST['update']))
 { 
- $nim = $_POST['nim'];
- $nama=$_POST['nama'];
- $jkel=$_POST['jkel'];
- $alamat=$_POST['alamat'];
- $tgllhr=$_POST['tgllhr'];
- // update user data
-$result = mysqli_query($con, "UPDATE mahasiswa SET nama='$nama',jkel='$jkel',alamat='$alamat',tgllhr='$tgllhr' WHERE nim='$nim'");
- // Redirect to homepage to display updated user in list
-header("Location: index.php");
+    $nim = $_POST['nim'];
+    $nama=$_POST['nama'];
+    $jkel=$_POST['jkel'];
+    $alamat=$_POST['alamat'];
+    $tgllhr=$_POST['tgllhr'];
+
+    // update user data
+    $result = mysqli_query($con, "UPDATE mahasiswa SET nama='$nama',jkel='$jkel',alamat='$alamat',tgllhr='$tgllhr' WHERE nim='$nim'");
+    // Redirect to homepage to display updated user in list
+    header("Location: index.php");
 }
 ?>
 

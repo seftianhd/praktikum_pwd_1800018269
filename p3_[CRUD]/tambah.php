@@ -33,6 +33,7 @@
             </tr>
         </table>
     </form>
+    
     <?php
         // Check If form submitted, insert form data into users table.
         if(isset($_POST['Submit'])) {
