@@ -1,7 +1,7 @@
 <?php
 require_once "koneksi.php";
 
-$sql = "select * from mahasiswa";
+$sql = "select * from mahasiswa where nim = 'MHS01'";
 $query = mysqli_query($con,$sql);
 
 while ($row = mysqli_fetch_assoc($query)) {
