@@ -8,6 +8,9 @@
 	function altpw() {
 		alert("kata sandi harus diisi ")
 	}
+	function altu() {
+		alert("akun berhasil kedaftar")
+	}
 	
 </script>
 
@@ -17,6 +20,7 @@ include "koneksi.php";
 $email = $_POST['email'];
 $user = $_POST['username'];
 $pass=$_POST['password'];
+
 
 if (empty($_POST["email"])) {
 		echo "
@@ -47,14 +51,14 @@ if (empty($_POST["email"])) {
 		";
 	}else{
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                
+                $p = md5($pass);
     		// Insert user data into table
-    		$result = mysqli_query($con, "INSERT INTO user(username,email,password) VALUES('$user','$email','$pass')");
+    		$result = mysqli_query($con, "INSERT INTO user(username,email,password) VALUES('$user','$email','$p')");
         
     		// Show message when user added
     		echo "
 				<script>
-				altuser();
+				altu();
 				setTimeout(function() {  
 					document.location.href='signup.html';
 				}, 1000);

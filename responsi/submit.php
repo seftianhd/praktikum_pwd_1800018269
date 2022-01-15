@@ -45,7 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	}else{
 
-        $login=mysqli_query($con,"SELECT * FROM user WHERE username='$user' AND password='$pass'");
+		$p = md5($pass);
+        $login=mysqli_query($con,"SELECT * FROM user WHERE username='$user' AND password='$p'");
         $ketemu = mysqli_num_rows($login);
         $r= mysqli_fetch_assoc($login);
 
@@ -58,8 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         	exit();
         }else{
-        	echo "<script type='text/javascript'> alert1() </script>";
-        	header("location:login.html");
+        	
+        	echo "<script>
+				alert1();
+				setTimeout(function() {  
+					document.location.href='login.html';
+				}, 1000);
+				</script>";
         }
     }
 }
